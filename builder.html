@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Build a cultural space pathway from your city condition, strongest resource and main constraint.">
+  <meta name="description" content="Build an explainable cultural space pathway from local conditions, resources, constraints and priorities.">
   <meta name="theme-color" content="#ff5738">
   <title>Build Yours | Adaptive Toolkit</title>
   <link rel="stylesheet" href="styles.css">
@@ -12,40 +12,128 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Adaptive Toolkit home"><span class="brand-mark" aria-hidden="true"></span><span>Adaptive Toolkit</span></a>
+      <a class="brand" href="index.html" aria-label="Adaptive Toolkit home"><img class="brand-mark" src="assets/adaptive-orbit.svg" alt=""><span>Adaptive Toolkit</span></a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="method.html">Method</a>
         <a href="pathways.html">5 Pathways</a>
         <a href="builder.html" aria-current="page">Build yours</a>
         <a href="field-notes.html">Field notes</a>
       </nav>
-      <a class="download-link" href="assets/adaptive-toolkit.pdf" download="Adaptive-Toolkit.pdf">PDF <span>↓</span></a>
+      <a class="download-link" href="assets/adaptive-toolkit.pdf" download="Adaptive-Toolkit.pdf">Download toolkit <span>↓</span></a>
     </header>
 
-    <main id="main" class="builder-layout">
-      <section class="builder-lead">
-        <div><p class="eyebrow">03, Adapt, do not copy</p><h1>Build your own pathway.</h1></div>
-        <p>Three grounded inputs produce a provisional route for discussion. The result is a starting hypothesis, not a prescription.</p>
-      </section>
+    <main id="main" class="diagnostic-layout">
+      <aside class="diagnostic-rail">
+        <div>
+          <p class="eyebrow">Adaptive pathway diagnostic</p>
+          <h1>Build from context.</h1>
+          <p class="diagnostic-rail-copy">The tool compares five pathways without treating one model as universally correct.</p>
+        </div>
+        <div class="diagnostic-progress" aria-label="Diagnostic progress">
+          <div class="progress-meta"><span data-progress-label>Choose a mode</span><span data-progress-count>01 / 08</span></div>
+          <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+          <ol data-progress-steps>
+            <li class="is-current">Mode</li>
+            <li>Context</li>
+            <li>City condition</li>
+            <li>Resources</li>
+            <li>Constraints</li>
+            <li>Signals</li>
+            <li data-full-step>City audit</li>
+            <li>Action</li>
+            <li>Result</li>
+          </ol>
+        </div>
+      </aside>
 
-      <form class="builder-form" onsubmit="return false">
-        <div class="builder-step">
-          <label><span class="step-number">01</span><span class="step-field"><span>What is the main spatial condition?</span><select data-builder-condition><option value="empty">Visible vacancy</option><option value="share">Few vacancies, many underused facilities</option><option value="move">Peripheral areas are underserved</option><option value="memory">Strong heritage assets</option><option value="network">No immediate access to a building</option></select></span></label>
+      <section class="diagnostic-workspace" data-builder-app>
+        <div class="diagnostic-toolbar">
+          <span class="eyebrow" data-mode-label>Start</span>
+          <button class="text-button" type="button" data-reset-builder hidden>Reset</button>
         </div>
-        <div class="builder-step">
-          <label><span class="step-number">02</span><span class="step-field"><span>What is your strongest resource?</span><select><option>Municipal support</option><option>Artist network</option><option>Community demand</option><option>Existing public facilities</option><option>Heritage identity</option><option>University partner</option></select></span></label>
+        <div class="form-alert" role="alert" data-builder-alert hidden></div>
+
+        <section class="diagnostic-screen is-active" data-screen="mode" aria-labelledby="mode-title">
+          <div class="screen-heading"><p class="eyebrow">Choose depth</p><h2 id="mode-title">How closely should we read the city?</h2><p>Both modes use the same transparent pathway logic. The full diagnostic adds every question from the five city reading dimensions.</p></div>
+          <div class="mode-grid">
+            <button class="mode-card" type="button" data-mode="quick">
+              <span class="mode-number">01</span><strong>Quick pathway</strong><span>Core conditions, resources, constraints and strategic signals.</span><small>About 4 minutes</small>
+            </button>
+            <button class="mode-card mode-card-primary" type="button" data-mode="full">
+              <span class="mode-number">02</span><strong>Full city diagnostic</strong><span>Includes all 29 city reading questions across five dimensions.</span><small>About 10 minutes</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="context" aria-labelledby="context-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">Your context</p><h2 id="context-title">Name the place and the actor.</h2><p>This information appears in the final report. It does not change the pathway score.</p></div>
+          <div class="field-stack">
+            <label class="text-field"><span>City</span><input type="text" data-city-name placeholder="For example, Brussels" autocomplete="address-level2"></label>
+            <label class="text-field"><span>Project or organisation</span><input type="text" data-project-name placeholder="Optional"></label>
+            <label class="text-field"><span>Your position in the process</span><select data-actor-type><option value="Cultural actor">Cultural actor</option><option value="Municipality">Municipality</option><option value="Intermediary organisation">Intermediary organisation</option><option value="Community group">Community group</option><option value="Researcher">Researcher</option></select></label>
+          </div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="condition" aria-labelledby="condition-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">Main spatial challenge</p><h2 id="condition-title">Which statement is closest to the current situation?</h2><p>Choose the dominant challenge. Additional conditions can be added later as strategic signals.</p></div>
+          <div class="option-grid" data-condition-options></div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="resource" aria-labelledby="resource-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">Strongest resource</p><h2 id="resource-title">What gives the project its best starting position?</h2><p>Select one resource that is already credible and available, not one that may appear later.</p></div>
+          <div class="option-grid option-grid-compact" data-resource-options></div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="constraint" aria-labelledby="constraint-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">Biggest constraint</p><h2 id="constraint-title">What is most likely to prevent progress?</h2><p>The result will treat this as a practical limitation, not as a minor risk note.</p></div>
+          <div class="option-grid option-grid-compact" data-constraint-options></div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="signals" aria-labelledby="signals-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">Strategic signals</p><h2 id="signals-title">Which other conditions are present?</h2><p>Select every statement that is clearly relevant. These signals come from the Cultural Space Pathway Matrix.</p></div>
+          <div class="check-grid" data-signal-options></div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="audit" aria-labelledby="audit-title" hidden>
+          <div class="screen-heading audit-heading"><div><p class="eyebrow">Full city diagnostic</p><h2 id="audit-title" data-audit-group-title>Spatial conditions</h2></div><p data-audit-group-intro>Read the physical distribution and availability of space.</p></div>
+          <div class="audit-diagnostic-list" data-audit-questions></div>
+          <div class="audit-group-nav"><button class="text-button" type="button" data-audit-previous disabled>Previous dimension</button><span data-audit-group-count>1 / 5</span><button class="text-button" type="button" data-audit-next>Next dimension</button></div>
+        </section>
+
+        <section class="diagnostic-screen" data-screen="action" aria-labelledby="action-title" hidden>
+          <div class="screen-heading"><p class="eyebrow">First realistic action</p><h2 id="action-title">What can happen next?</h2><p>Choose one action that could realistically begin with the capacity currently available. The tool can also recommend one from the pathway result.</p></div>
+          <div class="option-grid option-grid-compact" data-action-options></div>
+        </section>
+
+        <section class="diagnostic-screen result-screen" data-screen="result" aria-labelledby="result-title" hidden>
+          <div class="result-hero">
+            <div><p class="eyebrow">Primary pathway</p><h2 id="result-title" data-result-primary>Use What Is Empty</h2><p data-result-summary></p></div>
+            <img src="assets/adaptive-orbit.svg" alt="" class="result-mark">
+          </div>
+
+          <div class="result-grid">
+            <section class="result-section score-section" aria-labelledby="scores-title"><p class="eyebrow">Comparative fit</p><h3 id="scores-title">Five pathway profile</h3><div class="score-list" data-score-list></div></section>
+            <section class="result-section"><p class="eyebrow">Supporting pathway</p><h3 data-result-supporting></h3><p data-supporting-copy></p></section>
+            <section class="result-section"><p class="eyebrow">Why this route</p><ul class="result-list" data-result-reasons></ul></section>
+            <section class="result-section"><p class="eyebrow">Possible models</p><ul class="result-list" data-result-models></ul></section>
+            <section class="result-section risk-section"><p class="eyebrow">Watch closely</p><ul class="result-list" data-result-risks></ul></section>
+            <section class="result-section action-section"><p class="eyebrow">First realistic action</p><h3 data-result-action></h3><p data-result-action-copy></p></section>
+            <details class="methodology-section"><summary>How this result was calculated <span>+</span></summary><div><p>The diagnostic applies a rule based score derived from the pathway matrix, local conditions, works well for statements and caution statements in the toolkit. It does not use artificial intelligence and it does not claim to remove political judgement.</p><p data-result-method></p></div></details>
+          </div>
+
+          <div class="result-actions"><button class="action-button action-button-primary" type="button" data-download-report>Download pathway report <span>↓</span></button><button class="action-button" type="button" data-revise-builder>Revise answers</button></div>
+        </section>
+
+        <div class="diagnostic-controls" data-wizard-controls hidden>
+          <button class="action-button" type="button" data-builder-back>Back</button>
+          <button class="action-button action-button-primary" type="button" data-builder-next>Continue <span>→</span></button>
         </div>
-        <div class="builder-step">
-          <label><span class="step-number">03</span><span class="step-field"><span>What is the biggest constraint?</span><select><option>High rent</option><option>Lack of legal clarity</option><option>No long term funding</option><option>Limited staff capacity</option><option>Lack of trust</option><option>Political uncertainty</option></select></span></label>
-        </div>
-        <div class="builder-result" aria-live="polite">
-          <div><p class="eyebrow">Primary pathway</p><strong data-builder-primary>Use What Is Empty</strong><p class="builder-support">Supporting pathway, <span data-builder-supporting>Transform What Has Memory</span></p></div>
-          <p>Use this result to begin negotiation and local research. It does not replace collective decision making.</p>
-        </div>
-      </form>
+        <noscript><p class="form-alert">JavaScript is required to calculate and download a pathway report.</p></noscript>
+      </section>
     </main>
-    <footer class="site-footer"><span>Adaptive Toolkit</span><a href="field-notes.html">Next, document a pilot ↗</a></footer>
+    <footer class="site-footer"><span>Adaptive Toolkit</span><a href="field-notes.html">Continue with field notes ↗</a></footer>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js"></script>
   <script src="site.js"></script>
 </body>
 </html>
