@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a cultural space pathway from your city condition, strongest resource and main constraint.">
+  <meta name="theme-color" content="#ff5738">
+  <title>Build Yours | Adaptive Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Adaptive Toolkit home"><span class="brand-mark" aria-hidden="true"></span><span>Adaptive Toolkit</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="method.html">Method</a>
+        <a href="pathways.html">5 Pathways</a>
+        <a href="builder.html" aria-current="page">Build yours</a>
+        <a href="field-notes.html">Field notes</a>
+      </nav>
+      <a class="download-link" href="assets/adaptive-toolkit.pdf" download="Adaptive-Toolkit.pdf">PDF <span>↓</span></a>
+    </header>
+
+    <main id="main" class="builder-layout">
+      <section class="builder-lead">
+        <div><p class="eyebrow">03, Adapt, do not copy</p><h1>Build your own pathway.</h1></div>
+        <p>Three grounded inputs produce a provisional route for discussion. The result is a starting hypothesis, not a prescription.</p>
+      </section>
+
+      <form class="builder-form" onsubmit="return false">
+        <div class="builder-step">
+          <label><span class="step-number">01</span><span class="step-field"><span>What is the main spatial condition?</span><select data-builder-condition><option value="empty">Visible vacancy</option><option value="share">Few vacancies, many underused facilities</option><option value="move">Peripheral areas are underserved</option><option value="memory">Strong heritage assets</option><option value="network">No immediate access to a building</option></select></span></label>
+        </div>
+        <div class="builder-step">
+          <label><span class="step-number">02</span><span class="step-field"><span>What is your strongest resource?</span><select><option>Municipal support</option><option>Artist network</option><option>Community demand</option><option>Existing public facilities</option><option>Heritage identity</option><option>University partner</option></select></span></label>
+        </div>
+        <div class="builder-step">
+          <label><span class="step-number">03</span><span class="step-field"><span>What is the biggest constraint?</span><select><option>High rent</option><option>Lack of legal clarity</option><option>No long term funding</option><option>Limited staff capacity</option><option>Lack of trust</option><option>Political uncertainty</option></select></span></label>
+        </div>
+        <div class="builder-result" aria-live="polite">
+          <div><p class="eyebrow">Primary pathway</p><strong data-builder-primary>Use What Is Empty</strong><p class="builder-support">Supporting pathway, <span data-builder-supporting>Transform What Has Memory</span></p></div>
+          <p>Use this result to begin negotiation and local research. It does not replace collective decision making.</p>
+        </div>
+      </form>
+    </main>
+    <footer class="site-footer"><span>Adaptive Toolkit</span><a href="field-notes.html">Next, document a pilot ↗</a></footer>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>

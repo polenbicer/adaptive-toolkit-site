@@ -1,24 +1,26 @@
-# Adaptive Toolkit website
+# Adaptive Toolkit website, version 2
 
-A standalone website for **(Re)Imagining Urban Spaces for Art and Culture**.
+This package contains a standalone, multi page website for the Adaptive Toolkit.
 
-## Publish with GitHub Pages
+## Update the existing GitHub repository
 
-1. Create a new public GitHub repository.
-2. Upload everything inside this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`, then save.
+1. Open the `adaptive-toolkit-site-v2` folder on your computer.
+2. Select everything inside it, not the outer folder itself.
+3. Open the existing `adaptive-toolkit-site` repository on GitHub.
+4. Choose **Add file**, then **Upload files**.
+5. Drag all selected files and the `assets` folder into the upload area.
+6. If GitHub asks about existing files, keep the new versions.
+7. Commit the changes directly to the `main` branch.
 
-The site uses plain HTML, CSS and JavaScript. It has no dependencies and no build step.
+GitHub Pages will update automatically after the commit.
 
-## Local preview
+## Pages
 
-Open `index.html` in a browser. For the most reliable local preview, run any simple static server from this folder.
+* `index.html`, home
+* `method.html`, city reading method
+* `pathways.html`, five interactive pathways
+* `builder.html`, pathway builder
+* `field-notes.html`, printable pilot notes
+* `assets/adaptive-toolkit.pdf`, downloadable guide
 
-## Files
-
-- `index.html` — complete responsive website and interactions
-- `assets/adaptive-toolkit.pdf` — downloadable full guide
-- `.nojekyll` — prevents GitHub Pages from applying Jekyll processing
-
+The site uses plain HTML, CSS and JavaScript. There is no installation or build step.
