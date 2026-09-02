@@ -1,12 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="title desc">
-  <title id="title">Adaptive Toolkit spatial orbit</title>
-  <desc id="desc">A perspective room containing three open spatial layers</desc>
-  <rect x="1" y="1" width="78" height="78" fill="#f3f0e8" stroke="#111111" stroke-width="2"/>
-  <path d="M12 13H68V67H12Z M12 13L23 24H57L68 13 M23 24V56L12 67 M57 24V56L68 67 M23 56H57" fill="none" stroke="#111111" stroke-width="1" opacity=".42"/>
-  <path d="M18 29C23 24 57 24 62 29C57 34 23 34 18 29Z" fill="none" stroke="#1746d1" stroke-width="4"/>
-  <path d="M22 41C27 37 53 37 58 41C53 45 27 45 22 41Z" fill="none" stroke="#ff5738" stroke-width="4"/>
-  <path d="M18 54C24 49 56 49 62 54C56 59 24 59 18 54Z" fill="none" stroke="#1746d1" stroke-width="4"/>
-  <circle cx="40" cy="29" r="2.5" fill="#b9e6d3" stroke="#111111" stroke-width="1"/>
-  <circle cx="31" cy="41" r="2.5" fill="#f3f0e8" stroke="#111111" stroke-width="1"/>
-  <circle cx="49" cy="54" r="2.5" fill="#ff5738" stroke="#111111" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Adaptive Toolkit flowing space</title>
+  <desc id="desc">An original abstract mark formed by layered spatial contours and an open passage</desc>
+
+  <defs>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.8"
+        numOctaves="2"
+        seed="17"
+        result="noise"
+      />
+      <feComposite
+        in="noise"
+        in2="SourceGraphic"
+        operator="in"
+        result="texture"
+      />
+      <feBlend
+        in="SourceGraphic"
+        in2="texture"
+        mode="multiply"
+      />
+    </filter>
+
+    <clipPath id="frame">
+      <rect x="5" y="5" width="86" height="86" rx="2"/>
+    </clipPath>
+  </defs>
+
+  <rect
+    x="5"
+    y="5"
+    width="86"
+    height="86"
+    rx="2"
+    fill="#f3f0e8"
+    stroke="#111111"
+    stroke-width="1"
+  />
+
+  <g clip-path="url(#frame)" filter="url(#grain)">
+    <path
+      d="M-7 73C12 52 20 27 44 19C64 12 88 20 105 6V102H-7Z"
+      fill="#1746d1"
+    />
+
+    <path
+      d="M-4 82C14 67 19 43 43 34C61 27 79 34 101 20V102H-4Z"
+      fill="#ff5738"
+    />
+
+    <path
+      d="M-3 91C17 78 23 59 45 50C62 43 78 49 100 37V102H-3Z"
+      fill="#a89b55"
+    />
+
+    <path
+      d="M2 101C18 89 29 76 47 68C66 60 83 66 98 55V104H2Z"
+      fill="#1c2250"
+    />
+
+    <path
+      d="M45 14C39 30 42 45 49 56C55 66 55 78 48 96H63C70 76 68 63 61 51C55 41 55 28 61 13Z"
+      fill="#f3f0e8"
+    />
+
+    <path
+      d="M49 13C44 30 47 43 53 54C60 66 60 78 54 96"
+      fill="none"
+      stroke="#111111"
+      stroke-width="1.15"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M57 13C52 28 54 39 60 50C68 64 68 79 61 96"
+      fill="none"
+      stroke="#b9e2d0"
+      stroke-width="2.1"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M-2 75C14 58 22 34 44 26C64 18 84 25 101 13"
+      fill="none"
+      stroke="#f3f0e8"
+      stroke-width="0.8"
+      opacity="0.72"
+    />
+
+    <path
+      d="M-2 85C15 70 22 49 44 41C63 34 81 40 101 27"
+      fill="none"
+      stroke="#111111"
+      stroke-width="0.75"
+      opacity="0.7"
+    />
+
+    <path
+      d="M0 94C18 81 26 65 46 57C64 50 81 56 99 44"
+      fill="none"
+      stroke="#f3f0e8"
+      stroke-width="0.8"
+      opacity="0.75"
+    />
+
+    <path
+      d="M8 101C25 89 33 80 49 74C66 67 82 72 96 63"
+      fill="none"
+      stroke="#ff5738"
+      stroke-width="0.85"
+      opacity="0.9"
+    />
+  </g>
 </svg>
