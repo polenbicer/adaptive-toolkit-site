@@ -820,61 +820,42 @@ textarea:focus-visible {
   vertical-align: 0.06em;
 }
 
+.rotating-word {
+  display: inline-flex;
+  align-items: center;
+  width: 5.7em;
+  margin-left: 0.04em;
+  padding: 0.03em 0.13em 0.09em;
+  overflow: hidden;
+  background: #111111;
+  color: #f3f0e8;
+  line-height: 0.88;
+  vertical-align: 0.06em;
+}
+
 .rotating-word > span {
-  grid-area: word;
   display: block;
-  opacity: 0;
   white-space: nowrap;
-  animation: rotating-word-cycle 25s infinite;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
 }
 
-.rotating-word > span:nth-child(1) {
-  animation-delay: 0s;
+.rotating-word > span.is-changing {
+  opacity: 0;
+  transform: translateY(-0.14em);
 }
 
-.rotating-word > span:nth-child(2) {
-  animation-delay: 3s;
-}
-
-.rotating-word > span:nth-child(3) {
-  animation-delay: 6s;
-}
-
-.rotating-word > span:nth-child(4) {
-  animation-delay: 9s;
-}
-
-.rotating-word > span:nth-child(5) {
-  animation-delay: 12s;
-}
-
-@keyframes rotating-word-cycle {
-  0% {
-    opacity: 0;
-    transform: translateY(0.18em);
-  }
-
-  2%,
-  18% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  20%,
-  100% {
-    opacity: 0;
-    transform: translateY(-0.18em);
+@media (max-width: 760px) {
+  .rotating-word {
+    width: 5.7em;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rotating-word > span {
-    animation: none;
-    opacity: 0;
-    transform: none;
-  }
-
-  .rotating-word > span:first-child {
-    opacity: 1;
+    transition: none;
   }
 }
