@@ -508,3 +508,29 @@
   createBuilder();
   setupFieldNotes();
 })();
+
+(() => {
+  const rotatingWord = document.querySelector('[data-rotating-word]');
+
+  if (!rotatingWord || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const words = [
+    'blueprint',
+    'monument',
+    'commodity',
+    'privilege',
+    'prescription'
+  ];
+
+  let currentWord = 0;
+
+  window.setInterval(() => {
+    rotatingWord.classList.add('is-changing');
+
+    window.setTimeout(() => {
+      currentWord = (currentWord + 1) % words.length;
+      rotatingWord.textContent = words[currentWord];
+      rotatingWord.classList.remove('is-changing');
+    }, 180);
+  }, 2000);
+})();

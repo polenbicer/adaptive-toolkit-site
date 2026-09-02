@@ -808,24 +808,11 @@ textarea:focus-visible {
   *, *::before, *::after { transition: none !important; }
 }
 .rotating-word {
-  display: inline-grid;
-  grid-template-areas: "word";
-  align-items: center;
-  margin-left: 0.04em;
-  padding: 0.03em 0.13em 0.09em;
-  overflow: hidden;
-  background: #111111;
-  color: #f3f0e8;
-  line-height: 0.88;
-  vertical-align: 0.06em;
-}
-
-.rotating-word {
   display: inline-flex;
   align-items: center;
-  width: 5.7em;
+  width: auto;
   margin-left: 0.04em;
-  padding: 0.03em 0.13em 0.09em;
+  padding: 0.02em 0.1em 0.08em;
   overflow: hidden;
   background: #111111;
   color: #f3f0e8;
@@ -835,23 +822,18 @@ textarea:focus-visible {
 
 .rotating-word > span {
   display: block;
+  width: max-content;
   white-space: nowrap;
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 220ms ease,
-    transform 220ms ease;
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
 .rotating-word > span.is-changing {
   opacity: 0;
-  transform: translateY(-0.14em);
-}
-
-@media (max-width: 760px) {
-  .rotating-word {
-    width: 5.7em;
-  }
+  transform: translateY(-0.12em);
 }
 
 @media (prefers-reduced-motion: reduce) {
